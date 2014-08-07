@@ -47,6 +47,7 @@ Attributes
 * `node["tomcat"]["endorsed_dir"]` -
 
 ### Attributes for SSL
+* `node["tomcat"]["ssl_enable"]` - enable/disable SSL redirect, default is `true`.
 * `node["tomcat"]["ssl_cert_file"]` - SSL certificate file
 * `node["tomcat"]["ssl_chain_files"]` - SSL CAcert chain files used for generating the SSL certificates
 * `node["tomcat"]["ssl_max_threads"]` - maximum number of threads in the ssl connector pool, default `150`.
