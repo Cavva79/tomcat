@@ -1,0 +1,4 @@
+# Tomcat ports
+-A INPUT -p tcp -dport <%= node['tomcat']['ssl_enable'] ? node['tomcat']['ssl_port'] : node['tomcat']['port'] %> -m state -state NEW -j ACCEPT
+# Ajp port
+-A INPUT -p tcp -dport <%= node['tomcat']['ajp_port'] %> -m state -state NEW -j ACCEPT
