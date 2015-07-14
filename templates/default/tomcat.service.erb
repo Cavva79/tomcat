@@ -7,6 +7,7 @@ After=syslog.target network.target
 [Service]
 Type=forking
 Environment="SERVICE_NAME=<%= @instance %>"
+Environment="NAME=<%= @instance %>"
 ExecStart=/usr/sbin/tomcat-sysd start
 ExecStop=/usr/sbin/tomcat-sysd stop
 SuccessExitStatus=143

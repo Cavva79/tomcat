@@ -137,6 +137,10 @@ action :configure do
       mode '0644'
       notifies :restart, "service[#{instance}]"
     end
+    link "/usr/sbin/tomcat-sysd" do
+      to "/usr/sbin/tomcat"
+      mode '0755'
+    end
   when 'smartos'
     # SmartOS doesn't support multiple instances
     template "#{new_resource.base}/bin/setenv.sh" do
