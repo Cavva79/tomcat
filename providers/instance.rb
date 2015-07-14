@@ -141,6 +141,16 @@ action :configure do
       to "/usr/sbin/tomcat"
       mode '0755'
     end
+    if "/usr/share/tomcat/webapps/manager" != "/usr/share/#{instance}/webapps/manager"
+      link "/usr/share/#{instance}/webapps/manager" do
+        to "/usr/share/tomcat/webapps/manager"
+      end
+    end
+    if "/usr/share/tomcat/webapps/host-manager" != "/usr/share/#{instance}/webapps/host-manager"
+      link "/usr/share/#{instance}/webapps/host-manager" do
+        to "/usr/share/tomcat/webapps/host-manager"
+      end
+    end
   when 'smartos'
     # SmartOS doesn't support multiple instances
     template "#{new_resource.base}/bin/setenv.sh" do
