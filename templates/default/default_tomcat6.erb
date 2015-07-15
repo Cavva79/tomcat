@@ -68,3 +68,12 @@ CATALINA_OPTS="<%= @catalina_options %>"
 
 # Endorse .jar files in this directory
 JAVA_ENDORSED_DIRS="<%= @endorsed_dir %>"
+
+
+<% if !@envs.nil? %>
+	<% if @envs.respond_to? :each %>
+		<% @envs.each do |key, value|%>
+<%= key %>=<%= value %>
+		<% end %>
+	<% end %>
+<% end %>	
