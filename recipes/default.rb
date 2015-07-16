@@ -107,5 +107,6 @@ node['tomcat']['instances'].each do |name, attrs|
     lib_dir attrs['lib_dir']
     endorsed_dir attrs['endorsed_dir']
     envs attrs['envs']
+    global_naming_resources attrs['global_naming_resources']
   end
 end

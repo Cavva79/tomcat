@@ -86,3 +86,5 @@ attribute :endorsed_dir,
   :kind_of => String
 attribute :envs,
   :kind_of => Array
+attribute :global_naming_resources,
+  :kind_of => String

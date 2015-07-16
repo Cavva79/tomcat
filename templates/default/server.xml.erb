@@ -51,6 +51,7 @@
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
+    <%= @global_naming_resources %>
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
