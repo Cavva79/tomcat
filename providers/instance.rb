@@ -146,6 +146,13 @@ action :configure do
       link "/usr/share/#{instance}/webapps/manager" do
         to "/usr/share/tomcat/webapps/manager"
       end
+      template "/usr/share/tomcat/webapps/manager/WEB-INF/web.xml" do
+        source 'manager-web.xml.erb'
+        owner 'root'
+        group 'root'
+        mode '0644'
+        notifies :restart, "service[#{instance}]"
+      end
     end
     if "/usr/share/tomcat/webapps/host-manager" != "/usr/share/#{instance}/webapps/host-manager"
       link "/usr/share/#{instance}/webapps/host-manager" do

@@ -51,6 +51,8 @@ default['tomcat']['instances'] = {}
 default['tomcat']['run_base_instance'] = true
 default['tomcat']['packages'] = ["tomcat#{node['tomcat']['base_version']}"]
 default['tomcat']['deploy_manager_packages'] = ["tomcat#{node['tomcat']['base_version']}-admin"]
+default['tomcat']['max-file-size'] = 52428800
+default['tomcat']['max-request-size'] = 52428800
 
 case node['platform_family']
 
