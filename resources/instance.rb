@@ -85,6 +85,6 @@ attribute :lib_dir,
 attribute :endorsed_dir,
   :kind_of => String
 attribute :envs,
-  :kind_of => Array
+  :kind_of => Hash
 attribute :global_naming_resources,
   :kind_of => String
